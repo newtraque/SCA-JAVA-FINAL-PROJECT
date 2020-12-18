@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<GridPane fx:controller="sample.view_controller.SignupController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
+          styleClass="root">
+    <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+
+
+    <Text id="welcome-text" text="Register"
+          GridPane.columnIndex="0" GridPane.rowIndex="0"
+          GridPane.columnSpan="2"/>
+
+
+    <Label text="Username:"
+           GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    <TextField fx:id="emailField" promptText="Enter Email Address"
+               GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+
+    <Label text="First Name:"
+           GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+
+    <TextField fx:id="firstNameField" promptText="Enter First Name"
+               GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+
+    <Label text="Last Name:"
+    GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+    <TextField fx:id="lastNameField" promptText="Enter Your Last Name"
+               GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+
+    <Label text="Gender: "
+           GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+    <ComboBox fx:id="genderComboField" GridPane.columnIndex="2" GridPane.rowIndex="4">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Male" />
+                <String fx:value="Female" />
+                <String fx:value="Prefer not to say" />
+            </FXCollections>
+        </items>
+        <value>
+        <String fx:value="Male" />
+    </value>
+    </ComboBox>
+
+    <Label text="Password: "
+           GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+    <PasswordField fx:id="passwordField" promptText="Enter Password"
+                   GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+
+    <Label text="Confirm Password:"
+           GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+    <PasswordField fx:id="passwordField2" promptText="Enter Password Again"
+                   GridPane.columnIndex="2" GridPane.rowIndex="6"/>
+
+    <HBox spacing="10" alignment="center"
+          GridPane.columnIndex="2" GridPane.rowIndex="7">
+        <Button text="Register"
+                onAction="#handleRegisterButtonAction">
+            <tooltip>
+                <Tooltip text="Click to Register"/></tooltip>
+        </Button>
+        <Button text="Quit" fx:id="closeButton" onAction="#handleCloseButtonAction"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="center"
+          GridPane.columnIndex="2" GridPane.rowIndex="8">
+        <Hyperlink text="Login"
+                   onAction="#handleLoginPageAction">
+        </Hyperlink>
+        <Label text="|"/>
+        <Hyperlink text="Contact Us"
+                   onAction="#handleInquiryPageAction">
+
+        </Hyperlink>
+    </HBox>
+
+    <Text fx:id="actiontargetregister"
+          GridPane.columnIndex="0" GridPane.columnSpan="2"
+          GridPane.halignment="RIGHT" GridPane.rowIndex="7"/>
+
+    <stylesheets>
+        <URL value="@sample.css"/>
+    </stylesheets>
+
+</GridPane>

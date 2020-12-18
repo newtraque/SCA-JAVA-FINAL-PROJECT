@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane fx:controller="sample.view_controller.SignupController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
+          styleClass="root">
+    <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+
+    <Text id="welcome-text" text="Contact Us"
+          GridPane.columnIndex="0" GridPane.rowIndex="0"
+          GridPane.columnSpan="2"/>
+
+    <Label text="Email"
+           GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    <TextField fx:id="emailField" promptText="Enter Email"
+               GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+
+    <Label text="Password"
+           GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+    <TextArea fx:id="inquiryField" promptText="Enter Inquiry"
+                   GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+
+    <HBox spacing="10" alignment="center"
+          GridPane.columnIndex="2" GridPane.rowIndex="5">
+        <Button text="Submit"
+                onAction="#handleSubmitInquiryAction">
+            <tooltip><Tooltip text="Submit Inquiry"></Tooltip></tooltip>
+        </Button>
+
+        <Button text="Quit" fx:id="closeButton" onAction="#handleCloseButtonAction"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="center"
+          GridPane.columnIndex="2" GridPane.rowIndex="7">
+        <Hyperlink text="Register"
+                   onAction="#handleRegisterPageAction">
+        </Hyperlink>
+        <Label text="|"/>
+        <Hyperlink text="Login"
+                   onAction="#handleLoginPageAction">
+
+        </Hyperlink>
+    </HBox>
+
+    <Text fx:id="actiontargetcontactus"
+          GridPane.columnIndex="0" GridPane.columnSpan="2"
+          GridPane.halignment="RIGHT" GridPane.rowIndex="6"/>
+
+    <stylesheets>
+        <URL value="@sample.css"/>
+    </stylesheets>
+
+</GridPane>
